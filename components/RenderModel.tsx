@@ -2,7 +2,9 @@
 import { Canvas } from "@react-three/fiber";
 import React, { ReactNode } from "react";
 import clsx from "clsx";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment  } from "@react-three/drei";
+// OrbitControls
+// import { OrbitControls } from "@react-three/drei";
 
 interface RenderModelProps {
   children: ReactNode;
