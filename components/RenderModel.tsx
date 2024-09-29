@@ -15,11 +15,12 @@ export default function RenderModel({ children, className }: RenderModelProps) {
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} />
         {children}
-        <OrbitControls 
+        {/* if u want to move by urself */}
+        {/* <OrbitControls 
         enableZoom={false} 
         makeDefault
         minPolarAngle={Math.PI / 2} 
-        maxPolarAngle={Math.PI / 2} />
+        maxPolarAngle={Math.PI / 2} /> */}
       <Environment preset = 'warehouse'/>
     </Canvas>
   );
