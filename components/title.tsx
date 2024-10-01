@@ -6,38 +6,23 @@ import Image from "next/image";
 export default function Title() {
     return (
         <>
-            <div className="relative h-screen overflow-x-hidden">
-                <div className="absolute inset-0 flex flex-col justify-center ">
-                    <Image 
-                    src="/asset/PORTFOLIO.svg"
-                        width={1250}
-                        height={600}
-                        alt="subline"
-                        className=" absolute top-32 -left-52" />
-                    <Image
-                        src="/asset/subline.svg"
-                        width={2000}
-                        height={500}
-                        alt="subline"
-                        className=" absolute"
-                    />
-                    <Image 
-                    src="/asset/PORTFOLIO.svg"
-                        width={1250}
-                        height={500}
-                        alt="subline"
-                        className=" absolute bottom-32 -right-52" />
+            <div className="relative w-full h-screen overflow-x-hidden">
+                <div className="absolute flex flex-col">
+                    <Image width={2000} height={200} src="/asset/PORTFOLIO.svg" alt="PORTFOLIO" className="relative top-10 -left-96"/>
+                    <Image width={2000} height={200} src="/asset/subline.svg" alt="subline" className="relative top-16"/>
+                    <Image width={2000} height={200} src="/asset/PORTFOLIO.svg" alt="PORTFOLIO" className="relative -bottom-20 left-96"/>
                 </div>
-                <div className="absolute w-full z-10 bottom-16 flex justify-center">
-                    <h1 className="text-5xl">Hi! , I&apos;m Yossawat Imjai</h1>
-                </div>
-                <div className="absolute top-0 left-0 w-full h-full ">
+                <div className="w-full h-screen">
                     <RenderModel>
                         <Rabbit />
                     </RenderModel>
                 </div>
-                
+
+                <div className="absolute w-full z-10 bottom-5 flex justify-center">
+                    <h1 className="text-5xl">Hi! , I&apos;m Yossawat Imjai</h1>
+                </div>
             </div>
+
         </>
 
     );

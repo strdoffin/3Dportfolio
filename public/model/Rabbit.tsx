@@ -38,7 +38,6 @@ export function Rabbit(props: JSX.IntrinsicElements['group']) {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -51,7 +50,8 @@ export function Rabbit(props: JSX.IntrinsicElements['group']) {
       ref={modelRef}
       position={[0, -2.5, 0]}
       scale={3}
-      rotation={rotation} // Set rotation based on state
+      rotation={rotation}
+      
     >
       <mesh
         castShadow
