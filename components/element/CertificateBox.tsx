@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "../Card";
 
-
+// Define a type for the image paths
 type ImagePath = {
     path: string;
 };
@@ -17,53 +17,26 @@ export default function ProjectBox() {
         { path: "/asset/IotSmartFarm.png" },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [isHovered, setIsHovered] = useState<boolean>(false);
+    const [currentIndex, setCurrentIndex] = useState<number>(0); // Set type for currentIndex
 
     const nextSlide = () => {
-        // Move to the next slide if not at the last slide
-        if (currentIndex < Imgpath.length - 1) {
-            setCurrentIndex((prevIndex) => prevIndex + 1);
-        }
+        // Move to the next slide, wrap around to the first slide if at the last slide
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Imgpath.length);
     };
 
     const prevSlide = () => {
-        // Move to the previous slide if not at the first slide
-        if (currentIndex > 0) {
-            setCurrentIndex((prevIndex) => prevIndex - 1);
-        }
+        // Move to the previous slide, wrap around to the last slide if at the first slide
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Imgpath.length) % Imgpath.length);
     };
-
-    // Define the event type for the scroll event
-    const handleScroll = (event: WheelEvent) => {
-        if (isHovered) {
-            if (event.deltaY > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("wheel", handleScroll);
-        return () => {
-            window.removeEventListener("wheel", handleScroll);
-        };
-    }, [isHovered, currentIndex]);
 
     return (
-        <div
-            className="w-full md:h-80 md:w-full aspect-video col-span-3 relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="w-full md:h-80 md:w-full aspect-video col-span-3 relative">
             <h1>Projects</h1>
             <div>
                 <div className="flex relative h-full overflow-hidden items-center p-2">
                     <div
                         className="flex transition-transform duration-[1000ms] gap-6"
-                        style={{ transform: `translateX(-${currentIndex * 15}%)` }}
+                        style={{ transform: `translateX(-${currentIndex * 20}%)` }}
                     >
                         {Imgpath.map((img, index) => (
                             <Card key={index} image={img.path} />
