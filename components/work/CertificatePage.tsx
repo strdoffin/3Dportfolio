@@ -31,7 +31,7 @@ export default function ProjectBox() {
 
     return (
         <div className="w-full md:h-80 md:w-full aspect-video col-span-3 relative">
-            <h1>Projects</h1>
+            <h1>Certificates</h1>
             <div>
                 <div className="flex relative h-full overflow-hidden items-center p-2">
                     <div
