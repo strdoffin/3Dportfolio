@@ -1,18 +1,3 @@
-// const navItem = {
-//     home: {
-//         name: "home",
-//         href: "#hero",
-//     },
-//     profile: {
-//         name: "profile",
-//         href: "#profile",
-//     },
-//     project: {
-//         name: "project",
-//         href: "#project",
-//     },
-// }
-
 export default function Navbar() {
   return (
     <div className="w-full flex justify-center">
