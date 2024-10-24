@@ -7,7 +7,7 @@ export interface CardProps {
 
 export default function Card({ image }: CardProps) {
     return (
-        <div className="">
+        <div className="hover:scale-110 transition-all delay-75">
             <div className="w-72 bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <Image alt="" src={image} width={250} height={250} className="rounded-t-3xl w-full " />
