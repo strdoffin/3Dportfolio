@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Space_Mono as SpaceMono } from 'next/font/google'; // Renamed to avoid conflict
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const spaceMono = SpaceMono({ weight: '400', style: 'normal', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "3Dportfolio",
@@ -24,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceMono.className} antialiased`}
       >
         {children}
       </body>

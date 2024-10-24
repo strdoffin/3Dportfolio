@@ -1,12 +1,13 @@
-import Title from "@/components/title";
+import Navbar from "@/components/Navbar";
+// import AboutSection from "@/components/section/Profile-Section";
+import HeroSection from "@/components/section/Hero-Section";
+// import ProjectSection from "@/components/section/Project-Section";
 
-export default function Page() {
+export default function Home() {
     return (
-        <section className="max-h-[1000px] w-full bg-no-repeat max-sm:bg-center bg-cover bg-[url('/asset/Group4.svg')] ">
-            <div>
-                <Title />
-                <section className="w-full h-screen">test scroll</section>
-            </div>
-        </section>
+        <>
+            <Navbar />
+            <HeroSection />
+        </>
     );
 }
