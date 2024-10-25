@@ -5,15 +5,11 @@
 ## Task
 ```
 CertificateBox
--> Courasal Slider
--> Certificate Card
--> Card Modal
+-> skeleton Box
+    -> Certificate Card
+    -> Card Modal
 
 ProjectBox
--> Courasal Slider
--> Certificate Card
--> Card Modal
-
-AboutBox
-->Box Modal
-```
+-> skeleton Box
+    -> Project Card
+    -> Card Modal
