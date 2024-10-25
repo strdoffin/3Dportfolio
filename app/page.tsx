@@ -6,7 +6,6 @@ import HeroSection from "@/components/BentoSection/Hero-Section";
 export default function Home() {
     return (
         <>
-            <h1>hello from Ubuntu</h1>
             <Navbar />
             <HeroSection />
         </>
