@@ -1,8 +1,10 @@
 import { Laptop } from "lucide-react";
+
 type Spec = {
     name?: string;
     cpu?: string;
     gpu?: string;
+    display?:string;
     memory?: string;
     storage?: string;
     os?: string;
@@ -13,41 +15,43 @@ export default function ComputerSpecBox() {
         { name: "Acer Nitro 5 AN515-R0CJ" },
         { cpu: "AMD Ryzen 5 5600H" },
         { gpu: "NVIDIA RTX 3050 Laptop" },
+        { display : "15.6 inch Full HD IPS 144Hz"},
         { memory: "16GB DDR4" },
         { storage: "512GB SSD" },
         { os: "Windows 11" },
     ];
 
     return (
-        <div className="w-full h-80 xl:col-span-2">
-            <div className="flex items-center text-xl ">
+        <div className="w-full h-80 xl:col-span-1">
+            <div className="flex items-center text-lg sm:text-xl">
                 <span>
                     <Laptop size={30} strokeWidth={1.5} />
                 </span>
-                Com-Spec
+                <span className="ml-2">Com-Spec</span>
             </div>
-            <div className="shadow-ani backdrop-blur-lg bg-transparent border-2 rounded-3xl h-full overflow-auto max-h-full flex items-center">
-                <div className="w-full xl:flex xl:flex-row pt-32 xl:pt-0 items-center ">
-                    <div className="w-full h-[250px] xl:w-1/2 bg-white p-6 flex items-center justify-center shadow-lg">
-                        <p className="text-center text-gray-500 text-lg">Laptop Image or Spec Details</p>
+            <div className="shadow-ani backdrop-blur-lg bg-transparent border-2 rounded-3xl h-full overflow-auto max-h-full flex  p-4 sm:p-4 scrollbar-hide">
+                <div className="w-full mb-4">
+                    <div className="w-full h-48">
+
                     </div>
-                    <div className="w-full xl:w-1/2 pl-10">
-                        {comspec.map((item, index) => (
-                            <ul
-                                key={index}
-                                className="list-disc flex flex-col "
-                            >
-                                {Object.entries(item).map(([key, value]) => (
-                                    <li
-                                        key={key}
-                                        className="break-words max-lg:text-sm my-2"
-                                    >
-                                        {value}
-                                    </li>
-                                ))}
-                            </ul>
-                        ))}
-                    </div>
+                    {comspec.map((item, index) => (
+                        <ul
+                            key={index}
+                            className=" flex flex-col px-4 "
+                        >
+                            {Object.entries(item).map(([key, value]) => (
+                                <li
+                                    key={key}
+                                    className="break-words text-sm"
+                                >
+                                    <strong>
+                                        {key.toUpperCase()}: <br className="hidden xl:inline"/>
+                                    </strong>
+                                    {value}
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
                 </div>
             </div>
         </div>

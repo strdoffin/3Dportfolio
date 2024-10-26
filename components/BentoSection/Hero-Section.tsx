@@ -11,8 +11,8 @@ export default function HeroSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
                 <AvatarBox />
                 <AboutMeBox />
-                <TechStackBox />
                 <ComputerSpecBox />
+                <TechStackBox />
                 <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 gap-10">
                     <ProjectBox />
                     <CertificateBox />
